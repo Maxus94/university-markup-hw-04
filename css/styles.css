@@ -342,10 +342,9 @@ body {
 .member-social-item {
   width: 40px;
   height: 40px;
- 
 }
 
-.member-social-link{
+.member-social-link {
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -356,7 +355,8 @@ body {
   transition: background-color var(--transition-timing);
 }
 
-.member-social-link:hover, .member-social-link:focus {
+.member-social-link:hover,
+.member-social-link:focus {
   background-color: var(--blue-pressed-ocean);
 }
 
@@ -479,8 +479,9 @@ body {
   transition: background-color var(--transition-timing);
 }
 
-.footer-social-link:hover, .footer-social-link:focus{
-  background-color: #31D0AA;
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background-color: #31d0aa;
 }
 
 .footer-social-image {
@@ -510,7 +511,9 @@ body {
   border-width: 1px;
   border-style: solid;
   border-color: var(--grey-light-cornflower);
-  transition: color var(--transition-timing), background-color var(--transition-timing), border-color var(--transition-timing);
+  transition: color var(--transition-timing),
+    background-color var(--transition-timing),
+    border-color var(--transition-timing);
 }
 
 .exhample-filter-button:hover,
@@ -534,12 +537,12 @@ body {
   row-gap: 48px;
 }
 
-.work-exhample-link {
-   
+.work-exhample-overlay{
+  background-color: var(--blue-main-iris);
 }
 
 .work-exhample-item {
-  width: calc((100% - 48) / 3);
+  width: calc((100% - 48px) / 3);
 }
 
 .exhample-info {
@@ -573,6 +576,56 @@ body {
   color: var(--blue-pressed-ocean);
 }
 
-.overlay{
-width: inherit;
+.overlay {
+  width: inherit;
+}
+
+/*modal styles*/
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+  transition: opacity var(--transition-timing), visibility var(--transition-timing);
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal-window {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 408px;
+  height: 584px;
+  background-color: #fcfcfc;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+}
+
+.close-modal-button {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  top: 24px;
+  right: 24px;
+  background-color: var(--grey-light-cornflower);
+  border-radius: 50%;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.1);
+  line-height: 0;
+}
+
+.close-modal-image {
+  width: 8px;
+  height: 8px;
 }
