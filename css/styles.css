@@ -80,6 +80,7 @@ body {
   padding-bottom: 24px;*/
   border-bottom: 1px solid var(--grey-light-cornflower);
   background: var(--light-white);
+  box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 2px 1px 0px rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -189,7 +190,9 @@ body {
       rgba(46, 47, 66, 0.7)
     ),
     url(../images/hero/people-office.jpg);
-  background-size: 1440px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;  
   max-width: 1440px;
   padding-top: 188px;
   padding-bottom: 188px;
@@ -251,16 +254,20 @@ body {
   flex-basis: calc((100% - 72px) / 4);
 }
 .advantage-image-container {
+ display: flex;
+ justify-content: center;
+ align-items: center;
   background-color: var(--dark-white-cloud);
   padding: 24px 100px;
   margin-bottom: 8px;
   border-radius: 4px;
+  height: 112px;
 }
 
-.advantage-image {
+/*.advantage-image {
   width: 64px;
   height: 64px;
-}
+}*/
 
 .advantage-title {
   margin-bottom: 8px;
@@ -363,8 +370,8 @@ body {
 }
 
 .member-social-image {
-  width: 16px;
-  height: 16px;
+  /*width: 16px;
+  height: 16px;*/
   fill: var(--dark-white-cloud);
 }
 
@@ -394,20 +401,22 @@ body {
   border-radius: 4px;
   border-width: 1px;
   border-style: solid;
-  border-color: var(--light-grey-slate);
-  transition: border-color var(--transition-timing);
+  color: var(--light-grey-slate);
+ /*border-color: var(--light-grey-slate);*/
+  transition: border-color var(--transition-timing), color var(--transition-timing);
 }
 
 .customers-item-link:hover,
 .customers-item-link:focus {
-  border-color: var(--blue-pressed-ocean);
+  /*border-color: var(--blue-pressed-ocean);*/
+  color: var(--blue-pressed-ocean)
 }
 
 .customer-item-image {
   display: block;
-  width: 104px;
-  height: 56px;
-  fill: var(--light-grey-slate);
+  /*width: 104px;
+  height: 56px;*/
+  fill: currentColor;
   transition: fill var(--transition-timing);
 }
 
@@ -432,8 +441,12 @@ body {
 
 .footer-container {
   display: flex;
-  gap: 120px;
-}
+  align-items: baseline;
+  }
+
+  .footer-text-container{
+    margin-right: 120px;
+  }
 
 .page-footer .logo-text {
   display: inline-block;
@@ -487,8 +500,8 @@ body {
 }
 
 .footer-social-image {
-  width: 24px;
-  height: 24px;
+ /*width: 24px;
+  height: 24px;*/
   fill: var(--dark-white-cloud);
 }
 
@@ -541,6 +554,18 @@ body {
   row-gap: 48px;
 }
 
+.work-exhample-link{
+  display: block;
+  transition: box-shadow var(--transition-timing);
+}
+
+.work-exhample-link:hover,
+.work-exhample-link:focus {
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+
 .work-exhample-link:hover .work-exhample-overlay,
 .work-exhample-link:focus .work-exhample-overlay {
   transform: translateY(0);
@@ -552,9 +577,7 @@ body {
 }
 
 .work-exhample-overlay {
-  padding-top: 40px;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding: 40px 32px;
   position: absolute;
   top: 0;
   left: 0;
@@ -638,11 +661,12 @@ body {
 
 .modal-window {
   position: absolute;
-  top: 80px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  /*transform: translateX(-50%);*/
+  transform: translate(-50%, -50%) scale(1);
   width: 408px;
-  height: 584px;
+  min-height: 584px;
   background-color: #fcfcfc;
   border-radius: 4px;
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
@@ -652,6 +676,9 @@ body {
 
 .close-modal-button {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 24px;
   height: 24px;
   padding: 0;
@@ -659,16 +686,15 @@ body {
   right: 24px;
   background-color: var(--grey-light-cornflower);
   border-radius: 50%;
-  border-width: 1px;
-  border-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   line-height: 0;
   transition: background-color var(--transition-timing),
-    border-color var(--transition-timing);
+    border var(--transition-timing);
 }
 
 .close-modal-image {
-  width: 8px;
-  height: 8px;
+  /*width: 8px;
+  height: 8px;*/
   fill: var(--black-navy);
   transition: fill var(--transition-timing);
 }
@@ -676,7 +702,7 @@ body {
 .close-modal-button:hover,
 .close-modal-button:focus {
   background-color: var(--blue-pressed-ocean);
-  border-color: transparent;
+  border: none;
 }
 
 .close-modal-button:hover .close-modal-image,
