@@ -622,13 +622,13 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--dark-grey-slate);
-  transition: color var(--transition-timing);
+  /*transition: color var(--transition-timing);*/
 }
 
 .work-exhample-title:hover,
-.work-exhample-title:focus,
-.work-exhample-type:hover,
-.work-exhample-type:focus {
+.work-exhample-title:focus
+/*.work-exhample-type:hover,
+.work-exhample-type:focus*/ {
   color: var(--blue-pressed-ocean);
 }
 
